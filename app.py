@@ -1020,9 +1020,14 @@ def render_leaderboards_tab():
 
 
 # ════════════════════════════════════════════════════════════════
-# 8. LOCAL ENTRY POINT
+# 8. WSGI EXPORTS FOR VERCEL, GUNICORN & PRODUCTION RUNTIMES
 # ════════════════════════════════════════════════════════════════
+dash_app = app
+server = app.server
+handler = server
+app = server  # for Vercel WSGI entrypoint
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8050))
     print(f"\n⚡ Starting Cricket Pressure Intelligence Dashboard on http://127.0.0.1:{port}")
-    app.run(debug=False, host='127.0.0.1', port=port)
+    dash_app.run(debug=False, host='127.0.0.1', port=port)
