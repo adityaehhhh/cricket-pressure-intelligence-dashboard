@@ -1,3 +1,13 @@
+---
+title: Cricket Pressure Performance Intelligence Dashboard
+emoji: 🏏
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # INTERACTIVE CRICKET PRESSURE PERFORMANCE DASHBOARD
 
 ## 1. Overview

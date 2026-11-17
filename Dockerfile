@@ -1,10 +1,9 @@
 # Official lightweight Python base image
 FROM python:3.11-slim
 
-# Prevent Python from writing .pyc files and buffer stdout/stderr
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PORT=8050
+ENV PORT=7860
 
 WORKDIR /app
 
@@ -15,8 +14,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application files and pre-computed datasets
 COPY . .
 
-# Expose target port
-EXPOSE 8050
+# Hugging Face Spaces default port
+EXPOSE 7860
 
 # Production WSGI server command
-CMD exec gunicorn app:server --bind 0.0.0.0:$PORT --workers 2 --threads 2 --timeout 120
+CMD ["gunicorn", "app:server", "--bind", "0.0.0.0:7860", "--workers", "2", "--threads", "2", "--timeout", "120"]
