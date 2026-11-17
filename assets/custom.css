@@ -1,0 +1,186 @@
+/* 
+   Pressure Performance Intelligence — Dark Obsidian Theme
+   Custom CSS for Dash Web Application
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: #141d2e;
+  --bg-card-hover: #1a253a;
+  --border-color: #1f2d44;
+  --border-accent: #2e4468;
+  --text-main: #f3f4f6;
+  --text-muted: #94a3b8;
+  --accent-cyan: #00e5ff;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-rose: #f43f5e;
+}
+
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism Cards */
+.dash-card {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.25s ease-in-out;
+}
+
+.dash-card:hover {
+  border-color: var(--border-accent) !important;
+  box-shadow: 0 6px 24px rgba(0, 229, 255, 0.08) !important;
+}
+
+/* Metric KPI Blocks */
+.kpi-card {
+  background: linear-gradient(135deg, rgba(20, 29, 46, 0.9) 0%, rgba(15, 23, 42, 0.9) 100%) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 10px !important;
+  padding: 14px 18px !important;
+  text-align: left;
+}
+
+.kpi-title {
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 4px !important;
+  font-weight: 600;
+}
+
+.kpi-value {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 1.6rem !important;
+  font-weight: 700 !important;
+  color: var(--text-main) !important;
+  line-height: 1.2;
+}
+
+.kpi-subtitle {
+  font-size: 0.72rem !important;
+  color: var(--text-muted) !important;
+  margin-top: 4px;
+}
+
+/* Badges & Tags */
+.badge-pill-cyan {
+  background: rgba(0, 229, 255, 0.15);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pill-purple {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--accent-purple);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pill-gold {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-amber);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pill-emerald {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Nav Tabs */
+.nav-pills .nav-link {
+  color: var(--text-muted) !important;
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 8px 16px !important;
+  transition: all 0.2s ease;
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--text-main) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--accent-cyan) !important;
+  background-color: rgba(0, 229, 255, 0.1) !important;
+  border-color: rgba(0, 229, 255, 0.3) !important;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2) !important;
+}
+
+/* Select dropdowns in dark theme */
+.Select-control, .Select-menu-outer {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+/* Tables */
+.table-dark {
+  background-color: transparent !important;
+  color: var(--text-main) !important;
+}
+
+.table-dark th {
+  border-color: var(--border-color) !important;
+  color: var(--accent-cyan) !important;
+  font-size: 0.78rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.table-dark td {
+  border-color: var(--border-color) !important;
+  font-size: 0.84rem !important;
+  vertical-align: middle !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-accent);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-cyan);
+}

@@ -1,0 +1,81 @@
+{
+  "hardware": "NVIDIA GeForce RTX 4050 Laptop GPU (6GB VRAM, CUDA 13.1, Driver 592.82)",
+  "dataset_scope": "352,625 deliveries across 1,540 matches (IPL, T20I, BBL, SA20, MLC, ILT20, LPL: 2022-2026)",
+  "train_test_split": "Chronological Split (\u22642024: 306,032 deliveries; 2025-2026: 46,593 deliveries)",
+  "models": [
+    {
+      "task": "Expected Runs (xRuns)",
+      "algorithm": "XGBoost Regressor (GPU tree_method=hist, device=cuda)",
+      "test_rmse": 1.7051,
+      "test_mae": 1.1218,
+      "baseline_rmse": 1.7444,
+      "rmse_improvement": "2.25% error reduction over baseline"
+    },
+    {
+      "task": "Boundary Probability P(Boundary)",
+      "algorithm": "XGBoost Classifier (binary:logistic, GPU)",
+      "log_loss": 0.4535,
+      "brier_score": 0.1408,
+      "roc_auc": 0.7241
+    },
+    {
+      "task": "Wicket Hazard Probability P(Wicket)",
+      "algorithm": "XGBoost Classifier (binary:logistic, GPU)",
+      "log_loss": 0.5943,
+      "brier_score": 0.2018,
+      "roc_auc": 0.6892
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "wickets_fallen",
+      "label": "Wickets Fallen (Innings State)",
+      "importance": 0.1332
+    },
+    {
+      "feature": "runs_scored_before",
+      "label": "Cumulative Innings Runs",
+      "importance": 0.1178
+    },
+    {
+      "feature": "overid",
+      "label": "Over Number (1-20 Match Phase)",
+      "importance": 0.0914
+    },
+    {
+      "feature": "crr",
+      "label": "Current Run Rate (CRR)",
+      "importance": 0.0761
+    },
+    {
+      "feature": "competition_IPL",
+      "label": "Competition: Indian Premier League",
+      "importance": 0.0668
+    },
+    {
+      "feature": "inn_phase_Middle",
+      "label": "Middle Overs Phase (Overs 7-15)",
+      "importance": 0.0648
+    },
+    {
+      "feature": "rrr",
+      "label": "Required Run Rate (Chase Context)",
+      "importance": 0.0592
+    },
+    {
+      "feature": "pressure_score",
+      "label": "Algorithmic Pressure Score (0-10)",
+      "importance": 0.0518
+    },
+    {
+      "feature": "balls_remaining",
+      "label": "Balls Remaining in Innings",
+      "importance": 0.0489
+    },
+    {
+      "feature": "competition_T20I",
+      "label": "Competition: T20 Internationals",
+      "importance": 0.0459
+    }
+  ]
+}
